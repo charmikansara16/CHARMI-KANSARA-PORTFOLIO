@@ -39,8 +39,8 @@
     <nav class="navbar navbar-expand-lg fixed-top glass-navbar" id="mainNavbar">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#hero">
-                <span class="brand-badge me-2"><i class="fa-solid fa-code"></i></span>
-                <span class="brand-text">Charmi<span class="gradient-text">.K</span></span>
+                <span class="brand-badge me-2">CK</span>
+                <span class="brand-text">Charmi<span class="gradient-text-pink">.Kansara</span></span>
             </a>
             
             <div class="d-flex align-items-center gap-2 order-lg-last ms-2">
@@ -48,9 +48,9 @@
                 <button class="btn btn-icon theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" data-bs-toggle="tooltip" title="Toggle Light/Dark Mode">
                     <i class="fa-solid fa-moon" id="themeIcon"></i>
                 </button>
-                <a href="#contact" class="btn btn-outline-gradient btn-sm d-none d-sm-inline-flex align-items-center gap-1">
-                    <span>Let's Connect</span>
-                    <i class="fa-solid fa-arrow-right-long text-xs"></i>
+                <a href="#contact" class="btn btn-hire-me btn-sm d-inline-flex align-items-center gap-1 rounded-pill px-3 py-2 fw-semibold">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span>Hire Me</span>
                 </a>
                 <button class="navbar-toggler custom-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="toggler-icon"></span>
@@ -78,9 +78,6 @@
                         <a class="nav-link" href="#certifications">Certifications</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#achievements">Activities</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -90,10 +87,12 @@
 
     <!-- HERO SECTION -->
     <section id="hero" class="hero-section min-vh-100 d-flex align-items-center position-relative overflow-hidden pt-5">
-        <!-- Ambient Animated Background Blur Orbs -->
-        <div class="ambient-glow glow-1"></div>
-        <div class="ambient-glow glow-2"></div>
-        <div class="ambient-glow glow-3"></div>
+        <!-- Interactive Constellation Particles Background Canvas -->
+        <canvas id="particles-canvas" class="particles-background"></canvas>
+
+        <!-- Ambient Glow Elements -->
+        <div class="ambient-glow glow-left"></div>
+        <div class="ambient-glow glow-right"></div>
 
         <div class="container position-relative z-2">
             <div class="row align-items-center gy-5">
@@ -101,132 +100,88 @@
                 <div class="col-lg-7 text-center text-lg-start hero-text-col">
                     <div class="badge-wrapper mb-3 reveal-on-scroll">
                         <span class="status-pill">
-                            <span class="pulse-dot"></span> Indus University | B.Tech CSE '28
+                            <span class="pulse-dot"></span> Available for Internships & AI/ML Opportunities
                         </span>
                     </div>
 
-                    <h1 class="hero-name display-3 fw-extrabold mb-2 reveal-on-scroll">
-                        Hello, I'm <br class="d-none d-sm-inline">
-                        <span class="gradient-text hero-title-name">CHARMI KANSARA</span>
+                    <h1 class="hero-greeting display-3 fw-bold mb-2 reveal-on-scroll">
+                        Hi, I'm <span class="gradient-text-hero">Charmi Kansara</span>
                     </h1>
 
                     <div class="typing-container mb-4 reveal-on-scroll">
-                        <span class="typing-prefix me-2">I am an</span>
                         <span id="typing-text" class="typing-highlight"></span><span class="cursor">&nbsp;</span>
                     </div>
 
                     <p class="hero-description lead mb-4 text-secondary reveal-on-scroll">
-                        Passionate B.Tech Computer Science student at <strong>Indus University</strong> with a growing interest in Artificial Intelligence, Machine Learning, data-driven technologies, and software development. I enjoy building practical technology solutions, learning new concepts, and turning ideas into useful digital experiences.
+                        Passionate B.Tech Computer Science student at Indus University with a growing interest in Artificial Intelligence, Machine Learning, data-driven technologies, and software development. I enjoy building practical technology solutions, learning new concepts, and turning ideas into useful digital experiences.
                     </p>
 
-                    <!-- Quick Highlight Metrics -->
-                    <div class="row g-3 mb-4 text-start justify-content-center justify-content-lg-start reveal-on-scroll">
-                        <div class="col-auto">
-                            <div class="hero-stat-card">
-                                <span class="stat-number gradient-text">8.5</span>
-                                <span class="stat-label">Current CGPA</span>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="hero-stat-card">
-                                <span class="stat-number text-cyan">3+</span>
-                                <span class="stat-label">Core AI/Web Projects</span>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="hero-stat-card">
-                                <span class="stat-number text-purple">2028</span>
-                                <span class="stat-label">Expected Grad</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Call To Action Buttons -->
-                    <div class="hero-cta-buttons d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start reveal-on-scroll">
+                    <!-- Main Action Buttons -->
+                    <div class="hero-cta-buttons d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-4 reveal-on-scroll">
                         <a href="#projects" class="btn btn-primary-gradient px-4 py-3 rounded-pill fw-semibold">
                             <i class="fa-solid fa-rocket me-2"></i>View My Projects
                         </a>
-                        <a href="#contact" class="btn btn-glass-secondary px-4 py-3 rounded-pill fw-semibold">
-                            <i class="fa-solid fa-paper-plane me-2"></i>Contact Me
+                        <a href="#contact" class="btn btn-glass-pill px-4 py-3 rounded-pill fw-semibold">
+                            <i class="fa-solid fa-envelope me-2"></i>Contact Me
                         </a>
-                        <button class="btn btn-outline-glow px-4 py-3 rounded-pill fw-semibold" id="downloadResumeBtn" data-bs-toggle="modal" data-bs-target="#resumeModal">
-                            <i class="fa-solid fa-file-arrow-down me-2"></i>Download Resume
+                        <button class="btn btn-glass-pill px-4 py-3 rounded-pill fw-semibold" id="downloadResumeBtn" data-bs-toggle="modal" data-bs-target="#resumeModal">
+                            <i class="fa-solid fa-file-alt me-2"></i>Resume Preview
+                        </button>
+                    </div>
+
+                    <!-- Direct Connect Row -->
+                    <div class="direct-connect-row d-flex flex-wrap align-items-center gap-2 justify-content-center justify-content-lg-start reveal-on-scroll">
+                        <span class="text-muted small me-2">Direct Connect:</span>
+                        <a href="https://www.linkedin.com/in/charmi-kansara-357756293/" target="_blank" rel="noopener noreferrer" class="btn btn-glass-chip btn-sm rounded-pill px-3 py-1">
+                            <i class="fa-brands fa-linkedin text-primary me-1"></i> LinkedIn
+                        </a>
+                        <button class="btn btn-glass-chip btn-sm rounded-pill px-3 py-1" id="heroCopyEmailBtn">
+                            <i class="fa-solid fa-copy text-cyan me-1"></i> Copy Email
                         </button>
                     </div>
                 </div>
 
-                <!-- Hero Right Tech Graphic Illustration -->
+                <!-- Hero Right Side Graphic Orb & Badges -->
                 <div class="col-lg-5 hero-illustration-col text-center reveal-on-scroll">
-                    <div class="illustration-wrapper mx-auto">
-                        <div class="glow-backdrop"></div>
-                        <div class="tech-card-glass p-4 rounded-4 shadow-lg position-relative">
-                            <!-- Floating Tech Badges -->
-                            <div class="floating-badge badge-top-left">
-                                <i class="fa-brands fa-python text-warning me-1"></i> Python 3.x
+                    <div class="orb-container mx-auto position-relative">
+                        <div class="orb-glow-backdrop"></div>
+                        
+                        <!-- Dashed Orbit Ring -->
+                        <div class="orbit-dashed-ring"></div>
+
+                        <!-- Center Glowing Brain Sphere -->
+                        <div class="center-brain-sphere d-flex align-items-center justify-content-center shadow-lg">
+                            <i class="fa-solid fa-brain brain-icon"></i>
+                        </div>
+
+                        <!-- Orbiting Badges -->
+                        <div class="orbit-badge badge-python">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="fa-brands fa-python text-warning fs-5"></i>
+                                <div class="text-start">
+                                    <span class="badge-title">Python</span>
+                                    <span class="badge-sub">AI Core</span>
+                                </div>
                             </div>
-                            <div class="floating-badge badge-top-right">
-                                <i class="fa-solid fa-brain text-purple me-1"></i> AI & ML
+                        </div>
+
+                        <div class="orbit-badge badge-aiml">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-microchip text-cyan fs-5"></i>
+                                <div class="text-start">
+                                    <span class="badge-title">AI / ML</span>
+                                    <span class="badge-sub">Multimodal & RAG</span>
+                                </div>
                             </div>
-                            <div class="floating-badge badge-bottom-left">
-                                <i class="fa-solid fa-database text-cyan me-1"></i> MySQL & DBMS
-                            </div>
-                            <div class="floating-badge badge-bottom-right">
-                                <i class="fa-brands fa-js text-warning me-1"></i> Modern Web
-                            </div>
+                        </div>
 
-                            <!-- Vector Tech Avatar Illustration -->
-                            <div class="avatar-svg-container py-3">
-                                <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg w-100 h-auto">
-                                    <defs>
-                                        <linearGradient id="grad-indigo-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#6366f1"/>
-                                            <stop offset="50%" stop-color="#a855f7"/>
-                                            <stop offset="100%" stop-color="#06b6d4"/>
-                                        </linearGradient>
-                                        <linearGradient id="grad-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-                                            <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.6"/>
-                                            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.6"/>
-                                        </linearGradient>
-                                        <radialGradient id="node-glow" cx="50%" cy="50%" r="50%">
-                                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="1"/>
-                                            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
-                                        </radialGradient>
-                                    </defs>
-
-                                    <!-- Outer Tech Orbit Rings -->
-                                    <circle cx="200" cy="200" r="160" stroke="url(#grad-indigo-cyan)" stroke-width="2" stroke-dasharray="8 8" class="orbit-ring-outer"/>
-                                    <circle cx="200" cy="200" r="125" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" class="orbit-ring-inner"/>
-
-                                    <!-- Neural Grid Nodes & Connections -->
-                                    <path d="M 100 150 Q 200 80 300 150 T 200 320 Z" fill="none" stroke="rgba(99, 102, 241, 0.3)" stroke-width="2"/>
-                                    <path d="M 120 200 L 200 120 L 280 200 L 200 280 Z" fill="none" stroke="url(#grad-indigo-cyan)" stroke-width="2" class="pulse-polygon"/>
-
-                                    <!-- Glowing Nodes -->
-                                    <circle cx="200" cy="120" r="7" fill="#38bdf8"/>
-                                    <circle cx="280" cy="200" r="7" fill="#a855f7"/>
-                                    <circle cx="200" cy="280" r="7" fill="#6366f1"/>
-                                    <circle cx="120" cy="200" r="7" fill="#34d399"/>
-                                    <circle cx="200" cy="200" r="10" fill="#f43f5e"/>
-
-                                    <!-- Neural Connection Rays -->
-                                    <line x1="200" y1="120" x2="200" y2="280" stroke="rgba(56, 189, 248, 0.5)" stroke-width="1.5"/>
-                                    <line x1="120" y1="200" x2="280" y2="200" stroke="rgba(168, 85, 247, 0.5)" stroke-width="1.5"/>
-
-                                    <!-- Center AI Brain / Developer Icon Graphic -->
-                                    <rect x="140" y="140" width="120" height="120" rx="24" fill="url(#grad-indigo-cyan)" opacity="0.9" />
-                                    <path d="M170 180 L190 200 L170 220 M210 180 L230 200 L210 220" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <line x1="195" y1="225" x2="205" y2="175" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
-
-                                    <!-- Particle Orbs -->
-                                    <circle cx="70" cy="100" r="4" fill="#a855f7" class="floating-particle-1"/>
-                                    <circle cx="330" cy="120" r="5" fill="#38bdf8" class="floating-particle-2"/>
-                                    <circle cx="310" cy="300" r="4" fill="#34d399" class="floating-particle-3"/>
-                                    <circle cx="90" cy="290" r="6" fill="#f43f5e" class="floating-particle-4"/>
-                                </svg>
-                            </div>
-
-                            <div class="tech-card-footer text-center pt-2">
-                                <span class="code-font text-cyan small"><i class="fa-solid fa-terminal me-1"></i> InduUniversity_CSE_AI_ML.py</span>
+                        <div class="orbit-badge badge-indus">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-purple fs-5"></i>
+                                <div class="text-start">
+                                    <span class="badge-title">Indus Univ</span>
+                                    <span class="badge-sub">8.5 CGPA</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -240,7 +195,7 @@
         <div class="container">
             <div class="section-header text-center mb-5 reveal-on-scroll">
                 <span class="section-subtitle">Get To Know Me</span>
-                <h2 class="section-title">About <span class="gradient-text">Charmi Kansara</span></h2>
+                <h2 class="section-title">About <span class="gradient-text-pink">Charmi Kansara</span></h2>
                 <div class="section-underline mx-auto"></div>
             </div>
 
@@ -340,7 +295,7 @@
         <div class="container">
             <div class="section-header text-center mb-5 reveal-on-scroll">
                 <span class="section-subtitle">Academic Roadmap</span>
-                <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+                <h2 class="section-title">My <span class="gradient-text-pink">Education</span></h2>
                 <div class="section-underline mx-auto"></div>
             </div>
 
@@ -429,7 +384,7 @@
         <div class="container">
             <div class="section-header text-center mb-5 reveal-on-scroll">
                 <span class="section-subtitle">Technical Proficiency</span>
-                <h2 class="section-title">My <span class="gradient-text">Skills</span> & Technologies</h2>
+                <h2 class="section-title">My <span class="gradient-text-pink">Skills</span> & Technologies</h2>
                 <div class="section-underline mx-auto"></div>
             </div>
 
@@ -573,7 +528,7 @@
         <div class="container">
             <div class="section-header text-center mb-5 reveal-on-scroll">
                 <span class="section-subtitle">Portfolio Highlights</span>
-                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <h2 class="section-title">Featured <span class="gradient-text-pink">Projects</span></h2>
                 <div class="section-underline mx-auto"></div>
                 <p class="text-secondary max-w-700 mx-auto mt-3">
                     Here are real concept implementations and practical tech solutions designed and developed during my engineering journey.
@@ -592,7 +547,6 @@
                                 </button>
                             </div>
                             <div class="project-badge"><i class="fa-solid fa-microphone me-1"></i> Multimodal AI</div>
-                            <!-- Custom SVG Project Mockup -->
                             <div class="project-svg-wrap text-center p-4">
                                 <svg viewBox="0 0 240 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-auto">
                                     <rect width="240" height="140" rx="12" fill="#0f172a"/>
@@ -642,7 +596,6 @@
                                 </button>
                             </div>
                             <div class="project-badge bg-purple"><i class="fa-solid fa-wand-magic-sparkles me-1"></i> Gen AI Platform</div>
-                            <!-- Custom SVG Project Mockup -->
                             <div class="project-svg-wrap text-center p-4">
                                 <svg viewBox="0 0 240 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-auto">
                                     <rect width="240" height="140" rx="12" fill="#0f172a"/>
@@ -692,7 +645,6 @@
                                 </button>
                             </div>
                             <div class="project-badge bg-success"><i class="fa-solid fa-graduation-cap me-1"></i> EdTech Platform</div>
-                            <!-- Custom SVG Project Mockup -->
                             <div class="project-svg-wrap text-center p-4">
                                 <svg viewBox="0 0 240 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-auto">
                                     <rect width="240" height="140" rx="12" fill="#0f172a"/>
@@ -739,7 +691,7 @@
         <div class="container">
             <div class="section-header text-center mb-5 reveal-on-scroll">
                 <span class="section-subtitle">Verified Learning</span>
-                <h2 class="section-title">Certifications & <span class="gradient-text">Training</span></h2>
+                <h2 class="section-title">Certifications & <span class="gradient-text-pink">Training</span></h2>
                 <div class="section-underline mx-auto"></div>
             </div>
 
@@ -780,69 +732,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Extensible Placeholder Card -->
-                <div class="col-lg-8 reveal-on-scroll">
-                    <div class="glass-card p-4 rounded-4 text-center border-dashed border-cyan-subtle">
-                        <div class="py-2">
-                            <i class="fa-solid fa-circle-plus text-cyan display-6 mb-2"></i>
-                            <h4 class="h6 text-muted mb-1">Continuous Skill Expansion</h4>
-                            <p class="text-secondary text-xs mb-0">More specialized AI/ML and Cloud Computing certifications currently in progress.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ACHIEVEMENTS & ACTIVITIES SECTION -->
-    <section id="achievements" class="py-6 position-relative">
-        <div class="container">
-            <div class="section-header text-center mb-5 reveal-on-scroll">
-                <span class="section-subtitle">Extracurricular & Milestones</span>
-                <h2 class="section-title">Achievements & <span class="gradient-text">Activities</span></h2>
-                <div class="section-underline mx-auto"></div>
-            </div>
-
-            <div class="row g-4 justify-content-center">
-                <!-- Academic Excellence Card -->
-                <div class="col-md-6 col-lg-4 reveal-on-scroll">
-                    <div class="glass-card p-4 h-100 rounded-4 text-center">
-                        <div class="activity-icon-wrapper mx-auto mb-3 text-warning">
-                            <i class="fa-solid fa-trophy"></i>
-                        </div>
-                        <h3 class="h5 fw-bold mb-2">Academic Consistency</h3>
-                        <p class="text-secondary small mb-0">
-                            Maintaining an impressive <strong>8.5 CGPA</strong> in B.Tech Computer Science Engineering at Indus University, demonstrating steady commitment to computer science fundamentals.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- AI Workshops & Tech Events -->
-                <div class="col-md-6 col-lg-4 reveal-on-scroll">
-                    <div class="glass-card p-4 h-100 rounded-4 text-center">
-                        <div class="activity-icon-wrapper mx-auto mb-3 text-cyan">
-                            <i class="fa-solid fa-network-wired"></i>
-                        </div>
-                        <h3 class="h5 fw-bold mb-2">Technical Workshops & Events</h3>
-                        <p class="text-secondary small mb-0">
-                            Active participant in university technical events, coding workshops, and seminars exploring Artificial Intelligence, Machine Learning, and Software Engineering.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Student Collaborations -->
-                <div class="col-md-6 col-lg-4 reveal-on-scroll">
-                    <div class="glass-card p-4 h-100 rounded-4 text-center">
-                        <div class="activity-icon-wrapper mx-auto mb-3 text-purple">
-                            <i class="fa-solid fa-users-gear"></i>
-                        </div>
-                        <h3 class="h5 fw-bold mb-2">Project Innovations</h3>
-                        <p class="text-secondary small mb-0">
-                            Collaborated on practical student concepts including Multimodal AI Shopping Assistants and Generative AI content transformation workflows.
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -852,7 +741,7 @@
         <div class="container">
             <div class="section-header text-center mb-5 reveal-on-scroll">
                 <span class="section-subtitle">Get In Touch</span>
-                <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+                <h2 class="section-title">Contact <span class="gradient-text-pink">Me</span></h2>
                 <div class="section-underline mx-auto"></div>
                 <p class="text-secondary max-w-700 mx-auto mt-3">
                     Feel free to reach out for academic inquiries, technology discussions, or collaborative projects!
@@ -974,7 +863,7 @@
         <div class="container text-center">
             <div class="footer-brand mb-3">
                 <a class="h4 fw-bold text-decoration-none" href="#hero">
-                    Charmi<span class="gradient-text">.Kansara</span>
+                    Charmi<span class="gradient-text-pink">.Kansara</span>
                 </a>
             </div>
             <p class="text-secondary small max-w-500 mx-auto mb-4">
@@ -1013,7 +902,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4" id="projectModalBody">
-                    <!-- Dynamic Content populated via JS -->
                 </div>
                 <div class="modal-footer border-top border-dark-subtle">
                     <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Close</button>
